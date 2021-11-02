@@ -1,9 +1,8 @@
-function generate() {
+const generate = (length = 16) => {
   const characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789*@&$#.";
-  const length = 16;
   let password = "";
-  for (let i = 0, j = characters.length; i < length; i++) {
-    password += characters.charAt(Math.floor(Math.random() * j));
+  for(let i = 0; i < length; i++) {
+    password += characters[Math.floor(Math.random() * characters.length)];
   }
   document.getElementById("password").innerText = password;
 }
